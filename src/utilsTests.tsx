@@ -49,7 +49,14 @@ export function renderContainer (store, children, path = '/', options = {}, lang
   )
 }
 
-export function renderContainerWithRoute (store, children, path = '/', matchPath = '/', options = {}, language = 'en'): ReactNode {
+export function renderContainerWithRoute (
+  store,
+  children,
+  path = '/',
+  matchPath = '/',
+  options = {},
+  language = 'en'
+): ReactNode {
   return render(
     <Provider store={store}>
       <IntlProvider locale={language} messages={testStrings} timeZone={timeZoneWithNoOffset}>

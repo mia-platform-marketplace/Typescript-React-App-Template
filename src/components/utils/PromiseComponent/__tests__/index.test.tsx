@@ -5,7 +5,7 @@
 
 import React from 'react'
 import {FormattedMessage, IntlProvider} from 'react-intl'
-import {waitFor} from "@testing-library/react";
+import {waitFor} from '@testing-library/react'
 
 import {renderComponent} from '../../../../utilsTests'
 import PromiseComponent from '..'
@@ -51,7 +51,7 @@ describe('PromiseComponent', () => {
         {data => children(data)}
       </PromiseComponent>
     )
-  
+
     await waitFor(
       () => expect(element.getByText('Loading...')).toBeInTheDocument()
     )
