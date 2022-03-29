@@ -1,0 +1,117 @@
+{
+  "name": "pos-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-intl": "^5.20.6",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6",
+    "redux-devtools-extension": "^2.13.9",
+    "eslint-plugin-flowtype": "^5.9.0",
+    "@babel/register": "^7.14.5",
+    "@staticdeploy/mock-server": "^2.0.0",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/react-hooks": "^3.7.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.4",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-intl": "^3.0.0",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "babel-plugin-import": "^1.13.3",
+    "customize-cra": "^1.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint": "^7.32.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-standard": "^4.0.2",
+    "husky": "^4.3.8",
+    "npm-run-all": "^4.1.5",
+    "react-styleguidist": "^11.1.6",
+    "standard-version": "^9.3.1",
+    "typescript": "4.5.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "NODE_ENV=production INLINE_RUNTIME_CHUNK=false react-scripts build",
+    "test": "react-scripts test",
+    "lint": "eslint --ext=.ts --ext=.tsx src",
+    "coverage": "yarn test --coverage --watchAll=false",
+    "dev:unit-watch": "yarn test",
+    "dev:mock-server": "mock-server --delay 200 --watch --require @babel/register",
+    "dev:styleguide": "styleguidist server",
+    "dev": "npm-run-all -p dev:** start",
+    "styleguide:build": "styleguidist build",
+    "update-docker-version": "sed -i.bck \"s|version=\\\"[0-9]*\\.[0-9]*\\.[0-9]*.*\\\"|version=\\\"${npm_package_version}\\\"|\" Dockerfile",
+    "version": "npm run update-docker-version && rm -fr Dockerfile.bck && git add Dockerfile"
+  },
+  "proxy": "http://localhost:3456",
+  "standard-version": {
+    "skip": {
+      "bump": true,
+      "tag": true
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all lint coverage"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/src/setupTests.ts",
+      "/src/utilsTests.tsx",
+      "/src/index.tsx",
+      "/src/strings",
+      "/src/serviceWorker.js",
+      "/src/config.ts",
+      "/src/redux/index.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  }
+}
