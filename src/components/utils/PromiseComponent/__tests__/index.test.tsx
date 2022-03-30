@@ -1,6 +1,6 @@
 /*
- * Copyright 2022 Mia srl
- * All reserved
+ * Copyright © 2022-present Mia s.r.l.
+ * All rights reserved
  */
 
 import React from 'react'

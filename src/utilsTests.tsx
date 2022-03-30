@@ -1,3 +1,8 @@
+/*
+ * Copyright © 2022-present Mia s.r.l.
+ * All rights reserved
+ */
+
 import React, {ReactNode} from 'react'
 import {render, RenderResult} from '@testing-library/react'
 import {IntlProvider} from 'react-intl'

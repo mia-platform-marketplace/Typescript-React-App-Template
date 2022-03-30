@@ -1,6 +1,6 @@
 /*
-*  Insert in this folder your redux reducers.
-*  You can delete this folder if you do not use redux.
-*/
+ * Copyright © 2022-present Mia s.r.l.
+ * All rights reserved
+ */
 
 export default {}
