@@ -8,7 +8,7 @@ import React from 'react'
 import {renderComponent} from '../utilsTests'
 import App from '../App'
 
-it('renders without crashing', () => {
+test('renders without crashing', () => {
   const component = renderComponent(<App />)
   expect(component.getByText('Learn React')).toBeInTheDocument()
 })
